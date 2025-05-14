@@ -1,0 +1,1 @@
+BASE_URL = "https://tenderonline.co.in/"
