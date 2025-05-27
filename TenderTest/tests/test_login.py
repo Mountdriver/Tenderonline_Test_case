@@ -4,11 +4,12 @@ from config.base_url import BASE_URL
 from pages.login import LoginPage
 
 driver = configure_driver()
+driver.get(BASE_URL)
 
 
 login = LoginPage(driver)
-login.open()
-time.sleep(2)
+
+
 login.enter_username("naveensiki2003@gmail.com")
 login.enter_password("Rishitha@2003")
 login.click_login()
