@@ -10,8 +10,8 @@ driver.get(BASE_URL)
 login = LoginPage(driver)
 
 
-login.enter_username("naveensiki2003@gmail.com")
-login.enter_password("Rishitha@2003")
+login.enter_username("")
+login.enter_password("")
 login.click_login()
 time.sleep(4)
 
