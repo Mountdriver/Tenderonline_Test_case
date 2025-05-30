@@ -9,7 +9,7 @@ class LoginPage:
 
     def enter_username(self, username):
         username_field = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "username"))
+            EC.element_to_be_clickable((By.ID,"email"))
         )
         username_field.click()
         username_field.clear()
@@ -24,7 +24,15 @@ class LoginPage:
 
     def click_login(self):
         login_button = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, "login-button"))
+            EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div/main/div[3]/div[2]/div/div/div/div[2]/form/div[2]/button"))
         )
         login_button.click()
 
+    def get_error_message(self):
+        try:
+            error_message = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div/main/div[3]/div[2]/div/div/div/div[2]/form/div[1]/p"))
+            )
+            return error_message.text
+        except Exception as e:
+            return None
